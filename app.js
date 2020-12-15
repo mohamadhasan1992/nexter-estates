@@ -57,7 +57,7 @@ app.use(hpp());
 app.use((req,res,next) => {
     next();
 })
-
+//checking git 
 //rendering site template
 app.use('/',viewRoutes);
 //connecting to the router
