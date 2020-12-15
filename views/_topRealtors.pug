@@ -1,0 +1,12 @@
+div.realtors
+    h3.heading-3=realtorBoxTitle
+    div.realtors__list(dir="rtl")
+        each realtor in realtors
+            img.realtors__img(src=`/img/users/${realtor.photo}` alt=`${realtor.username}`)
+            .realtors__details
+                h4.heading-4.heading-4--light=realtor.username
+                p.realtors__sold=realtor.houseQuantity
+                    span  خانه فروخته شده
+
+
+        

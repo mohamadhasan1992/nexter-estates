@@ -1,0 +1,42 @@
+extends accountBase 
+block pageContent
+    .user-view__content
+        .user-view__form-container
+            h2.heading-secondary.ma-bt-md افزودن خانه ی جدید
+            form.form.form-user-data
+                .form__group
+                    label.form__label(for='name') عنوان
+                    input#name.form__input(type='text', value=`عنوان`, required)
+                
+                .form__group
+                    label.form__label(for='area') متراژ
+                    input#area.form__input(type='number', value=`متراژ`, required)
+                
+                .form__group
+                    label.form__label(for='price') قیمت(براساس لیر)
+                    input#price.form__input(type='number', value=`قیمت`, required)
+                
+                .form__group
+                    label.form__label(for='city') شهر
+                    input#city.form__input(type='text', value=`شهر`, required)
+                    
+                
+                
+        .line &nbsp;
+        .user-view__form-container
+            form.form.form-user-data
+                .form__group.form__photo-upload
+                    //- img.form__user-photo(src=`/img/houses/${user.photo}`, alt='User photo')
+                    input.form__upload(type ='file' ,accept='/image/*' ,id='photo' ,name='photo')
+                    label(for='photo') انتخاب تصویر کاور
+                
+                .form__group.form__photo-upload
+                    //- img.form__user-photo(src=`/img/houses/${user.photo}`, alt='User photo')
+                    input.form__upload(type ='file' ,accept='/image/*' ,id='photo' ,name='photo')
+                    label(for='photo') انتخاب تصاویر
+
+            
+                
+                .form__group.left
+                    button.btn.btn--small.btn--green ذخیره
+                    

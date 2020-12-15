@@ -1,0 +1,26 @@
+.navbar(dir="rtl")  
+    .nav-items
+        a.nav__item(href="/") صفحه نخست
+
+        a.nav__item(href="/projects") املاک
+
+        a.nav__item(href="/states") شرکت های فروش
+
+        a.nav__item(href="/realtors")  مشاوران
+
+        a.nav__item(href="#") ارتباط با ما
+    
+    .navbar-btn
+        if user
+            
+            span.realtors__icon-name=user.username.split(' ')[0]
+            .realtors__icon
+                a.realtors__icon-link(href="/me")
+                    img(class="realtors__icon-img" src=`/img/users/${user.photo}` alt=`${user.username}`)
+            a.btn.btn--logout خروج
+                    
+                    
+                   
+        else
+            a.btn(href="/login") ورود
+            a.btn(href="/signup") ثبت نام

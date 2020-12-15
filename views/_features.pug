@@ -1,0 +1,8 @@
+section.features
+    each feature in features
+        .feature(dir="rtl")
+            svg.feature__icon
+                use(xlink:href=`img/sprite.svg#${feature.icon}`)
+            h4.heading-4.heading-4--dark=feature.title
+            p.feature__text=feature.description
+        

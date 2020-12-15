@@ -1,0 +1,14 @@
+extends base
+block content
+  main.login
+    .login-form(dir="rtl")
+      center.heading-secondary.ma-bt-lg ورود به حساب کاربری
+      form.form.form--login
+        .form__group
+          label.form__label(for='email') آدرس پست الکترونیکی
+          input#email.form__input(type='email', placeholder='you@example.com', name='email', required)
+        .form__group.ma-bt-md
+          label.form__label(for='password') رمز عبور
+          input#password.form__input(type='password', placeholder='••••••••', name='password', required, minlength='4')
+        .form__group.left
+          button.btn.btn--green ورود

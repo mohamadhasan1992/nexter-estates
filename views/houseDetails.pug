@@ -1,0 +1,51 @@
+extends base
+block content 
+    include _header
+    include _realtorHouse
+    .gallery-single
+        each image, i in house.images
+            figure(class =`house-img-${i+1}`)
+                img.gallery__img(src=`/img/houses/${image}` alt=`house-img-${i+1}`)
+        
+    .property-des
+        .property-des__text(dir="rtl")
+            span.des-text-title(dir="rtl") توضیحات:
+            span.des-text(dir="rtl")=house.discription
+            
+        .property-des__details
+            center.details-price=house.price
+            .details-info
+                .details-ans
+                    .info=house.propertyStatus
+                    .info=house.location.address
+                    .info=house.type
+                    .info=house.category
+                    .info=house.area
+                    .info=house.rooms
+                    .info=house.parking
+                    .info=house.floor
+                .details-name
+                    .name(dir="rtl") کد
+                    .name(dir="rtl") آدرس
+                    .name(dir="rtl") نوع
+                    .name(dir="rtl") وضعیت
+                    .name(dir="rtl") متراژ
+                    .name(dir="rtl") خواب
+                    .name(dir="rtl") پارکینگ
+                    .name(dir="rtl") طبقه
+
+    .property-realtor
+        img.property-realtor__img(src=`/img/users/${house.realtor.photo}` alt="realtor img")
+        .property-realtor__info
+            center.property-realtor__name(dir="rtl")=house.realtor.username
+            .property-realtor__info-description(dir="rtl")=house.realtor.aboutMe
+        .property-realtor__info-details
+            h1.realtor-info-details(dir="rtl") شماره تماس
+                span.realtor--heading=house.realtor.phoneNumber
+            h1.realtor-info-details(dir="rtl") ایمیل
+                span.realtor--heading(dir="ltr")=house.realtor.email
+            h1.realtor-info-details(dir="rtl") واتس آپ
+                span.realtor--heading(dir="ltr")=house.realtor.whatsappId
+            h1.realtor-info-details(dir="rtl") تلگرام
+                span.realtor--heading(dir="ltr")=house.realtor.telegramId
+            

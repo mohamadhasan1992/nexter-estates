@@ -1,0 +1,29 @@
+
+section.homes
+    each house in houses
+        .home(dir="rtl")
+            img.home__img(src=`/img/houses/${house.imageCover}` alt=`${house.title}`)
+            svg.home__like
+                use(xlink:href="/img/sprite.svg#icon-heart-full")
+            h5.home__name=house.realtor.username
+            .home__location
+                svg
+                    use(xlink:href="/img/sprite.svg#icon-map-pin")
+                p=house.location.city
+            .home__rooms
+                svg
+                    use(xlink:href="/img/sprite.svg#icon-profile-male")
+                p=house.rooms
+                    span خوابه
+            .home__area
+                svg
+                    use(xlink:href="/img/sprite.svg#icon-expand")
+                p=house.area
+                    span مترمربع
+            .home__price
+                svg
+                    use(xlink:href="/img/sprite.svg#icon-key")
+                p=house.price 
+                    span لیر
+            button.btn.home__btn
+                a.home-anchor(href=`/houses/${house.houseCode}`) جزییات

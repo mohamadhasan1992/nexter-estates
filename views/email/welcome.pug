@@ -1,0 +1,18 @@
+extends baseEmail
+block content
+    
+    p #{firstName},
+    p سلام
+    p به مجموعه مشاوران املاک نکستر خوش آمدید
+    p برای افزودن تصویر کاربری می توانید دکمه ی زیر را فشار دهید.
+    table.btn.btn-primary(role='presentation', border='0', cellpadding='0', cellspacing='0')
+    tbody
+        tr
+        td(align='left')
+            table(role='presentation', border='0', cellpadding='0', cellspacing='0')
+            tbody
+                tr
+                td
+                    a(href=`${url}`, target='_blank') افزودن تصویر کاربری
+    p 
+    p -محمدحسن تبریزی طراح و مدیر سایت

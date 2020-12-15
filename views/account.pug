@@ -1,0 +1,34 @@
+extends accountBase
+block pageContent
+    .user-view__content
+        .user-view__form-container
+            h2.heading-secondary.ma-bt-md تنظیمات حساب کاربری
+            form.form.form-user-data
+                .form__group
+                    label.form__label(for='name') نام
+                    input#name.form__input(type='text', value=`${user.username}`, required)
+                .form__group.ma-bt-md
+                    label.form__label(for='email') پست الکترونیک
+                    input#email.form__input(type='email', value=`${user.email}`, required)
+                .form__group.form__photo-upload
+                    img.form__user-photo(src=`/img/users/${user.photo}`, alt='User photo')
+                    input.form__upload(type ='file' ,accept='/image/*' ,id='photo' ,name='photo')
+                    label(for='photo') انتخاب تصویر
+                .form__group.left
+                    button.btn.btn--small.btn--green ذخیره
+        .line &nbsp;
+        .user-view__form-container
+            h2.heading-secondary.ma-bt-md تغییر رمز عبور
+            form.form.form-user-password
+                .form__group
+                    label.form__label(for='password-current') رمز عبور فعلی
+                    input#password-current.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group
+                    label.form__label(for='password') رمز عبور جدید
+                    input#password.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group.ma-bt-lg
+                    label.form__label(for='password-confirm') تایید رمز عبور
+                    input#password-confirm.form__input(type='password', placeholder='••••••••', required, minlength='8')
+                .form__group.left
+                    button.btn.btn--small.btn--green#btn-password ذخیره
+

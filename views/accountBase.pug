@@ -1,0 +1,33 @@
+extends base
+mixin navItems(link,text,icon,active)
+    li(class=`${active? 'side-nav--active':' '}`)
+        a(href=`${link}`)
+            svg
+                use(xlink:href=`/img/icons.svg#icon-${icon}`)
+            | #{text}
+
+block content
+    .main(dir="rtl")
+        .user-view
+            nav.user-view__menu
+                ul.side-nav
+                    +navItems('/updateme','تنظیمات','settings',true)
+                    +navItems('#','خانه های من','briefcase')
+                    
+                    li
+                        a(href=`/newhouse`)
+                            svg
+                                use(xlink:href=`/img/house.svg#icon-home1`)
+                            | افزودن خانه ی جدید
+
+                    +navItems('#','نظرات در مورد من','star')
+                - if(user.role === 'admin')
+                    .admin-nav
+                        h5.admin-nav__heading مدیر سایت
+                        ul.side-nav
+                            +navItems('#','مدیریت املاک','map')
+                            +navItems('#','مدیریت مشاوران','users')
+                            +navItems('#','مدیریت نظرات','star')
+                            
+            block pageContent
+            
